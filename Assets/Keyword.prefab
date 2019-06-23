@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   textObj: {fileID: 7163427787209214974}
+  topic: Casual Topic 1
 --- !u!1 &7163427787209214974
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,4 +227,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Casual Topic 1

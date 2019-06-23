@@ -20,12 +20,13 @@ public class Topic
     public string[] leadIns;
     public RealTalk realTalk;
     public CasualTalk casualTalk;
+    public string leadInRealTalk;
 }
 
 [Serializable]
 public class RealTalk
 {
-    public string alicesOpening;
+    public Line alicesOpening;
     public Line[] lines;
     public int pointMade;
 }
@@ -33,7 +34,7 @@ public class RealTalk
 [Serializable]
 public class CasualTalk
 {
-    public string alicesOpening;
+    public Line alicesOpening;
     public Line[] lines;
     public int pointMade;
 }

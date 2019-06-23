@@ -9,9 +9,12 @@ public class ButtonScript : MonoBehaviour
     private FormAliGameManager manager;
     public GameObject textObj;
 
+    public string topic;
+
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("GameManager");
         manager = gm.GetComponent<FormAliGameManager>();
     }
 
@@ -23,6 +26,12 @@ public class ButtonScript : MonoBehaviour
 
     public void OnClickEvent()
     {
-        manager.ChangeTopic(textObj.GetComponent<Text>().text);
+        manager.ChangeTopic(topic);
+    }
+
+    public void setText(string topic)
+    {
+        textObj.GetComponent<Text>().text = topic;
+        this.topic = topic;
     }
 }

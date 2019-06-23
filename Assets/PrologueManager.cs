@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class PrologueManager : MonoBehaviour
 {
     public GameObject textObj;
+    public AudioSource musicSource;
+    public AudioClip musicClip;
     private Text text;
     private string[] lines;
     private int i = 0;
@@ -16,13 +18,14 @@ public class PrologueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        musicSource.clip = musicClip;
+        musicSource.Play();
         text = textObj.GetComponent<Text>();
         StreamReader reader = new StreamReader("Assets/prologue.json");
         PrologueContainer c = JsonUtility.FromJson<PrologueContainer>(reader.ReadToEnd());
         lines = c.lines;
         maxLines = lines.Length;
         text.text = lines[i];
-        Debug.Log(c.i);
     }
 
     // Update is called once per frame
