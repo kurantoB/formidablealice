@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 using UnityEngine.SceneManagement;
 
 public class PrologueManager : MonoBehaviour
@@ -18,11 +15,11 @@ public class PrologueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.fullScreen = !Screen.fullScreen;
         musicSource.clip = musicClip;
         musicSource.Play();
         text = textObj.GetComponent<Text>();
-        StreamReader reader = new StreamReader("Assets/prologue.json");
-        PrologueContainer c = JsonUtility.FromJson<PrologueContainer>(reader.ReadToEnd());
+        PrologueContainer c = JsonUtility.FromJson<PrologueContainer>(JSONContainer.prologueJSON);
         lines = c.lines;
         maxLines = lines.Length;
         text.text = lines[i];

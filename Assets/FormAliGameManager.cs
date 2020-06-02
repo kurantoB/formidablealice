@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 using System;
 using UnityEngine.SceneManagement;
 
@@ -60,8 +58,7 @@ public class FormAliGameManager : MonoBehaviour
     {
         text = textObj.GetComponent<Text>();
         thoughtSpawner = thoughtSpawnerObj.GetComponent<ThoughtSpawner>();
-        StreamReader reader = new StreamReader("Assets/game.json");
-        tc = JsonUtility.FromJson<TopicContainer>(reader.ReadToEnd());
+        tc = JsonUtility.FromJson<TopicContainer>(JSONContainer.gameJSON);
         for (int i = 0; i < tc.topics.Length; i++)
         {
             topics.Add(tc.topics[i].topic, tc.topics[i]);

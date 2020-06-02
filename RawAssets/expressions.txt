@@ -1,0 +1,13 @@
+A_Dokidoki
+A_Drama
+A_Flustered
+A_Happy
+A_Inquisitive
+A_Lecturing
+A_Neutral
+A_Sad
+A_Side
+M_Exasperated
+M_Happy
+M_Sad
+M_Grin
